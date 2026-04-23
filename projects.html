@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projects and case studies by Mzwakhe Radebe — Full-Stack Developer." />
+  <title>Work — Mzwakhe Radebe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav__logo" href="index.html">MR<span>.</span></a>
+
+      <ul class="nav__links" role="list">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="projects.html">Work</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav__burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="nav__drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
+      <ul role="list">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="projects.html">Work</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <p class="section__label reveal">Selected work</p>
+      <h1 class="page-hero__title reveal">Projects</h1>
+      <p class="page-hero__sub reveal">
+        Things I've built — active live deployments.
+      </p>
+    </div>
+
+    <section class="section" aria-label="Project listing">
+
+      <div class="projects-filter reveal" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fullstack">Full-stack</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+      </div>
+
+      <div class="projects__grid" data-stagger>
+        <!-- Cards injected by js/projects.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">© <span id="year"></span> Mzwakhe Radebe</p>
+    <nav class="footer__links" aria-label="Social links">
+      <a class="footer__link" href="https://github.com/MzwakheRadebe" target="_blank"
+        rel="noopener noreferrer">GitHub</a>
+      <a class="footer__link" href="https://www.linkedin.com/in/mzwakhe-radebe-7254ba35a?trk=contact-info" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="footer__link" href="contact.html">Email</a>
+    </nav>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/projects.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Get in touch with Mzwakhe Radebe — Full-Stack Developer based in Mpumalanga, South Africa." />
+  <title>Contact — Mzwakhe Radebe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav__logo" href="index.html">MR<span>.</span></a>
+
+      <ul class="nav__links" role="list">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="projects.html">Work</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav__burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="nav__drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
+      <ul role="list">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="projects.html">Work</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-hero">
+      <p class="section__label reveal">Let's talk</p>
+      <h1 class="page-hero__title reveal">Contact</h1>
+      <p class="page-hero__sub reveal">
+        Open to new opportunities, collaborations, and interesting conversations.
+      </p>
+    </div>
+
+    <section class="section" aria-label="Contact information and form">
+      <div class="contact-grid">
+
+        <!-- Contact info -->
+        <aside>
+          <p class="section__label reveal" style="margin-bottom: var(--space-4);">Reach me at</p>
+
+          <dl class="reveal">
+            <div class="contact-info__item">
+              <dt class="contact-info__label">Email</dt>
+              <dd>
+                <a class="contact-info__value" href="mailto:Mzwakhe.radebe@icloud.com">mzwakheradeb27@gmail.com</a>
+              </dd>
+            </div>
+            <div class="contact-info__item">
+              <dt class="contact-info__label">Based in</dt>
+              <dd class="contact-info__value">Mpumalanga, South Africa</dd>
+            </div>
+            <div class="contact-info__item">
+              <dt class="contact-info__label">Availability</dt>
+              <dd class="contact-info__value">Open to opportunities</dd>
+            </div>
+            <div class="contact-info__item">
+              <dt class="contact-info__label">Response time</dt>
+              <dd class="contact-info__value">Usually within 24 hours</dd>
+            </div>
+          </dl>
+
+          <nav class="social-links reveal" aria-label="Social profiles" style="margin-top: var(--space-5);">
+            <a class="social-link" href="https://github.com/MzwakheRadebe" target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/mzwakhe-radebe-7254ba35a?trk=contact-info" target="_blank" rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+          </nav>
+        </aside>
+
+        <!-- Contact form -->
+        <div class="reveal">
+
+          <!-- Success banner (shown by Formspree after send) -->
+          <div class="form__success" data-fs-success aria-live="polite">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M2 8l4 4 8-8" />
+            </svg>
+            <p>Message sent — I'll get back to you within 24 hours.</p>
+          </div>
+
+          <!-- Form-level error (network / server issues) -->
+          <div class="form__error-banner" data-fs-error aria-live="polite"></div>
+
+          <form class="form" id="contact-form" novalidate aria-label="Contact form">
+            <div class="form__row">
+              <div class="field">
+                <label class="field__label" for="name">Name</label>
+                <input class="field__input" type="text" id="name" name="name" placeholder="Your name"
+                  autocomplete="name" required data-fs-field />
+                <span class="field__error" data-fs-error="name"></span>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <input class="field__input" type="email" id="email" name="email" placeholder="your@email.com"
+                  autocomplete="email" required data-fs-field />
+                <span class="field__error" data-fs-error="email"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="subject">Subject</label>
+              <input class="field__input" type="text" id="subject" name="subject" placeholder="What's this about?"
+                required data-fs-field />
+              <span class="field__error" data-fs-error="subject"></span>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="message">Message</label>
+              <textarea class="field__textarea draw-border" id="message" name="message"
+                placeholder="Tell me what you're working on, what you're looking for, or just say hello." required
+                data-fs-field></textarea>
+              <span class="field__error" data-fs-error="message"></span>
+            </div>
+
+            <button class="form__submit" type="submit" data-fs-submit-btn>
+              <span class="btn-text">Send message</span>
+              <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </button>
+          </form>
+
+          <!-- Formspree Ajax CDN -->
+          <script>
+            window.formspree = window.formspree || function () {
+              (formspree.q = formspree.q || []).push(arguments);
+            };
+            formspree('initForm', { formElement: '#contact-form', formId: 'xeevpyre' });
+          </script>
+          <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copy">© <span id="year"></span> Mzwakhe Radebe</p>
+    <nav class="footer__links" aria-label="Social links">
+      <a class="footer__link" href="https://github.com/MzwakheRadebe" target="_blank"
+        rel="noopener noreferrer">GitHub</a>
+      <a class="footer__link" href="https://www.linkedin.com/in/mzwakhe-radebe-7254ba35a?trk=contact-info" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="footer__link" href="contact.html">Email</a>
+    </nav>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/animations.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

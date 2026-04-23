@@ -1,0 +1,15 @@
+# Local dev server
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+
+# Vercel local config
+.vercel/
