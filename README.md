@@ -47,6 +47,18 @@ The standard Python server returns 404 for those — `server.py` rewrites them t
 
 ---
 
+## Deploying to Vercel (manual redeploy)
+
+```powershell
+cd "C:\NEW_projects\portfolio"
+vercel deploy --yes
+```
+
+Run this in PowerShell any time you want to push changes live manually.
+Auto-deploy is also set up via GitHub — every `git push` to the `master` branch deploys automatically.
+
+---
+
 ## Adding a new project ⭐
 
 **Only one file to edit: `js/projects.js`**
