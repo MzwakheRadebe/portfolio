@@ -76,6 +76,39 @@ const PROJECTS = [
     },
   },
 
+  {
+    id:          'sitesafe',
+    number:      '03 / 2025',
+    title:       'SiteSafe',
+    desc:        'An HSE compliance platform built for South African construction subcontractors working on Eskom power stations, mines, and refineries. It replaces the spreadsheets and physical binders safety officers use to track every worker\'s medical, training, induction, and permit — and flags what\'s about to expire before a deployment gets blocked at the gate.',
+    filterTags:  'fullstack backend',
+    tags:        ['Django', 'Next.js', 'PostgreSQL', 'Docker', 'Fly.io'],
+    image: {
+      src: 'assets/images/sitesafe.png',
+      alt: 'SiteSafe — HSE triage dashboard showing compliance status',
+    },
+    links: {
+      live:   'https://sitesafe.fly.dev',
+      github: 'https://github.com/MzwakheRadebe/sitesafe',
+    },
+    video: {
+      src: 'assets/videos/sitesafe-demo.mp4',
+    },
+    readme: {
+      features: [
+        'Login-time triage screen — what needs attention today, ranked red → amber → yellow → blue, not vanity metrics',
+        'Per-worker eligibility engine — "can I send these 12 workers to Kriel for the outage 5–18 May?" → instant green/amber/red verdict with reasons',
+        'Multi-tenant architecture with Postgres Row-Level Security — a code bug can\'t leak data across tenants (verified by CI-gated test)',
+        'POPIA-compliant audit log — append-only, 7-year retention, UPDATE/DELETE revoked at DB level',
+        'Role-based access control — 6 roles enforced on both API and UI',
+        'One-click HSE file PDF export — async WeasyPrint job assembles cover sheet, Section 37(2) mandatary agreement, per-worker docs, and timestamp watermark',
+        'JWT auth + Argon2 password hashing + account lockout after 5 failed attempts',
+        'Containerized deployment — Docker images deployed to Fly.io Johannesburg with persistent volumes and auto-stop scaling',
+      ],
+      stack: ['Django REST', 'Next.js', 'PostgreSQL', 'Docker', 'Fly.io', 'JWT', 'WeasyPrint'],
+    },
+  },
+
   /* ── ADD NEW PROJECTS BELOW THIS LINE ──────────────────────
   {
     id:         'my-new-project',        // short lowercase id, no spaces
