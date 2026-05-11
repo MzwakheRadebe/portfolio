@@ -78,7 +78,7 @@ const PROJECTS = [
 
   {
     id:          'sitesafe',
-    number:      '03 / 2025',
+    number:      '05 / 2026',
     title:       'SiteSafe',
     desc:        'An HSE compliance platform built for South African construction subcontractors working on Eskom power stations, mines, and refineries. It replaces the spreadsheets and physical binders safety officers use to track every worker\'s medical, training, induction, and permit — and flags what\'s about to expire before a deployment gets blocked at the gate.',
     filterTags:  'fullstack backend',
