@@ -189,6 +189,33 @@ function initReadmeToggles() {
   });
 }
 
+/* ── Screenshot gallery (projects page) ─────────────────────
+   Clicking a thumbnail swaps the main preview image and
+   marks the clicked thumb as active. Each gallery is scoped
+   by its data-gallery ID so multiple galleries work
+   independently on the same page.                          */
+function initGallery() {
+  document.querySelectorAll('.gallery__thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const galleryId = btn.dataset.gallery;
+      const gallery   = document.getElementById(galleryId);
+      if (!gallery) return;
+
+      /* Update active thumb */
+      gallery.querySelectorAll('.gallery__thumb').forEach(t => t.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      /* Swap preview image */
+      const preview = gallery.querySelector('.gallery__preview');
+      const img     = btn.querySelector('img');
+      if (preview && img) {
+        preview.src = img.src;
+        preview.alt = img.alt;
+      }
+    });
+  });
+}
+
 /* ── Init — runs all functions once the DOM is ready ────────
    Each function is safe to call on any page — they all check
    for their target elements before doing anything.          */
@@ -199,4 +226,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initVideoTabs();
   initReadmeToggles();
+  initGallery();
 });

@@ -87,6 +87,16 @@ const PROJECTS = [
       src: 'assets/images/sitesafe.png',
       alt: 'SiteSafe — HSE triage dashboard showing compliance status',
     },
+    gallery: [
+      { src: 'assets/images/sitesafe-homepage.png',  alt: 'SiteSafe landing page' },
+      { src: 'assets/images/sitesafe-login.png',     alt: 'Login screen' },
+      { src: 'assets/images/sitesafe.png',           alt: 'Triage dashboard' },
+      { src: 'assets/images/sitesafe-workers.png',   alt: 'Worker management' },
+      { src: 'assets/images/sitesafe-sites.png',     alt: 'Sites overview' },
+      { src: 'assets/images/sitesafe-permits.png',   alt: 'Permits tracking' },
+      { src: 'assets/images/sitesafe-reports.png',   alt: 'Reports view' },
+      { src: 'assets/images/sitesafe-audit.png',     alt: 'Audit log' },
+    ],
     links: {
       live:   'https://sitesafe.fly.dev',
       github: 'https://github.com/MzwakheRadebe/sitesafe',
@@ -199,6 +209,26 @@ function buildVideoBlock(p) {
   </div>`;
 }
 
+function buildGallery(p) {
+  if (!p.gallery || !p.gallery.length) return '';
+  const galleryId = `gallery-${p.id}`;
+  const thumbs = p.gallery.map((img, i) => `
+    <button class="gallery__thumb${i === 0 ? ' is-active' : ''}"
+      data-gallery="${galleryId}" data-index="${i}"
+      aria-label="${img.alt}">
+      <img src="${img.src}" alt="${img.alt}" loading="lazy"/>
+    </button>`).join('');
+
+  return `
+  <div class="gallery" id="${galleryId}">
+    <p class="gallery__heading">Screenshots</p>
+    <div class="gallery__main">
+      <img class="gallery__preview" src="${p.gallery[0].src}" alt="${p.gallery[0].alt}"/>
+    </div>
+    <div class="gallery__thumbs">${thumbs}</div>
+  </div>`;
+}
+
 function buildCard(p, index) {
   const readmeId = `readme-${p.id}`;
 
@@ -233,6 +263,8 @@ function buildCard(p, index) {
   </div>
 
   ${buildVideoBlock(p)}
+
+  ${buildGallery(p)}
 
   <div class="card__readme" id="${readmeId}">
     <div class="card__readme-inner draw-border">
